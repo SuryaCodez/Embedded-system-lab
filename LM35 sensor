@@ -1,0 +1,22 @@
+int sensorPin=A1;
+float temperatureC;
+float temperatureF;
+void setup() {
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  int sensorValue=analogRead(sensorPin);
+  temperatureC=(sensorValue*5.0/1023.0)*10;
+  temperatureF=(temperatureC*9.0/5.0)+32.0;
+  Serial.print("temperature in celcius:");
+  Serial.print(temperatureC);
+  Serial.println("ºC");
+  Serial.print("temperature in farenheit:");
+  Serial.print(temperatureF);
+  Serial.println("ºF");
+  delay(1000);
+  
+
+}
